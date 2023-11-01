@@ -43,12 +43,12 @@ app.get('/convert', (req, res) => {
    res.end();
 
    if (req.query.currencyAtHand === 'dollar' && req.query.currencyToChange === 'pounds') {
-      return res.send(`Value gotten is: $${Math.round(amount / 1290)},000`);
+      return res.send(`Value gotten is: $${Math.round(amount * 0.84)},000`);
    }
    res.end();
 
     if (req.query.currencyAtHand === 'dollar' && req.query.currencyToChange === 'euro') {
-      return res.send(`Value gotten is: $${Math.round(amount * 1295)},000`);
+      return res.send(`Value gotten is: $${Math.round(amount * 0.95)},000`);
    } 
    res.end();
 
@@ -59,12 +59,12 @@ app.get('/convert', (req, res) => {
    res.end();
 
    if (req.query.currencyAtHand === 'pounds' && req.query.currencyToChange === 'dollar') {
-      return res.send(`Value gotten is: £${Math.round(amount * 1290)},000`);
+      return res.send(`Value gotten is: £${Math.round(amount / 0.82)},000`);
    }
    res.end();
 
     if (req.query.currencyAtHand === 'pounds' && req.query.currencyToChange === 'euro') {
-      return res.send(`Value gotten is: £${Math.round(amount * 1295)},000`);
+      return res.send(`Value gotten is: £${Math.round(amount * 1.15)},000`);
    }
    res.end();
 
@@ -75,12 +75,12 @@ app.get('/convert', (req, res) => {
    res.end();
 
    if (req.query.currencyAtHand === 'euro' && req.query.currencyToChange === 'dollar') {
-      return res.send(`Value gotten is: £${Math.round(amount * 1295)},000`)
+      return res.send(`Value gotten is: £${Math.round(amount / 0.95)},000`)
    }
    res.end();
 
     if (req.query.currencyAtHand === 'euro' && req.query.currencyToChange === 'pounds') {
-      return res.send(`Value gotten is: €${Math.round(amount * 1525)},000`)
+      return res.send(`Value gotten is: €${Math.round(amount / 1.15)},000`)
    }
    res.end();
 
