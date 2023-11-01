@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Home | <%= tittle %> </title>
+   <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+   <!-- To do interface -->
+   <section id="todo">
+      <div>
+         <h2>To Do App</h2>
+      </div>
+      <div class="form-input">
+         <form action="/add" method="post">
+            <input type="text" name="tasks" placeholder="Task to be done..." required>
+            <input type="submit" value="Add" class="button">
+         </form>
+      </div>   
+   </section>
+
+   <% if(todo.length > 0) { %>
+      <% todo.forEach((task, listid) => { %>
+         <div class="list">
+         <%= task %>
+            <form action="/update" method="grt">
+               <input type="submit" value="Edit" class="button">
+            </form>
+            <form action="/delete/<%= listid %>" method="post">
+               <input type="submit" value="Delete" class="button">
+            </form><br>
+         <% }) %>
+      <% } %>
+   </div>
+
+</body>
+</html>
+
+

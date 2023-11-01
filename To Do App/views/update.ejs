@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/style.css">
+   <title>To Do List | <%= tittle %></title>
+</head>
+<body>
+      <section id="todo">
+         <div>
+            <h2>Edit Task</h2>
+         </div>
+         <div class="form-input">
+            <% if(todo.length > 0) { %>
+               <%todo.forEach((task, index) => { %>
+                  <form action="/update/<%= index %>" method="delete">
+                     <input type="text" name="edited" placeholder="Enter text" required>
+                     <input type="submit" value="Edit" class="button">
+                  </form>
+               <% }) %>
+            <% } %>
+         </div>
+      </section>
+</body>
+</html>
